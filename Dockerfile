@@ -4,9 +4,12 @@ LABEL maintainer="rzrbld <razblade@gmail.com>"
 
 WORKDIR /app
 
+ARG APP_UI_BASE
+
 ENV PATH /app/node_modules/.bin:$PATH
 ENV API_BASE_URL http://localhost:8080
-ENV APP_UI_BASE /
+ENV APP_UI_BASE ${APP_UI_BASE:-/}
+
 ENV ADMINIO_PROD false
 ENV ADMINIO_MULTI_BACKEND true
 ENV ADMINIO_BACKENDS '[{"name":"myminio","url":"http://localhost:8080"},{"name":"local","url":"http://localhost:8081"},{"name":"not-myminio","url":"http://minio.example.com:8080"}]'
