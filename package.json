@@ -7,7 +7,7 @@
     "start": "ng serve -o --port 4201",
     "prebuild": "eval \"echo \\\"$(cat src/environments/environment.ts.template)\\\"\" > src/environments/environment.ts",
     "prebuild:prod": "eval \"echo \\\"$(cat src/environments/environment.ts.template)\\\"\" > src/environments/environment.prod.ts",
-    "build": "ng build --output-path dist",
+    "build": "ng build --output-path dist --base-href=$APP_UI_BASE",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
